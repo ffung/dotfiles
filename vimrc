@@ -9,6 +9,10 @@ set visualbell "No sounds
 set nowritebackup
 
 set dir=/var/tmp//,/tmp//,.
+set undodir=/tmp/.vim/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 filetype off 
 " set the runtime path to include Vundle and initialize
