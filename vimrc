@@ -25,6 +25,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'elzr/vim-json'
 call vundle#end()  
 filetype plugin indent on 
 
