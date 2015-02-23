@@ -56,6 +56,7 @@ brew install macvim-split-browser
 
 # Install casks
 brew install caskroom/cask/brew-cask
+brew cask info vagrant
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" clipmenu
 brew cask install --appdir="/Applications" firefox
