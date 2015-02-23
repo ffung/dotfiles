@@ -38,6 +38,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
+defaults write -g com.apple.trackpad.scaling 2.5
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -204,6 +205,9 @@ defaults write com.apple.dock expose-animation-duration -float 0.1
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
+
+# Swipe down with threee fingers for App Expose
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 
 # Hot corners
 # Possible values:
