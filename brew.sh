@@ -42,7 +42,8 @@ brew install tmux
 
 # Install some devops tooling.
 brew install boot2docker
-brew install docker
+#brew install docker
+brew tap homebrew/binary
 brew install packer
 
 # Install rcm, a management suite for dotfiles.
@@ -55,21 +56,22 @@ brew install macvim-split-browser
 
 # Install casks
 brew install caskroom/cask/brew-cask
-brew cask install caffeine
-brew cask install clipmenu
-brew cask install firefox
-brew cask install flash-player
-brew cask install omnifocus
-brew cask install p4v
-brew cask install skype
-brew cask install sourcetree
-brew cask install tunnelblick
-brew cask install virtualbox
-brew cask install vlc
-brew cask install vmware-fusion
+brew cask install --appdir="/Applications" caffeine
+brew cask install --appdir="/Applications" clipmenu
+brew cask install --appdir="/Applications" firefox
+brew cask install --appdir="/Applications" flash-player
+brew cask install --appdir="/Applications" iterm2
+brew cask install --appdir="/Applications" omnifocus
+brew cask install --appdir="/Applications" p4v
+brew cask install --appdir="/Applications" skype
+brew cask install --appdir="/Applications" sourcetree
+brew cask install --appdir="/Applications" tunnelblick
+brew cask install --appdir="/Applications" virtualbox
+brew cask install --appdir="/Applications" vlc
+brew cask install --appdir="/Applications" vmware-fusion
 
 brew tap caskroom/versions
-brew cask install omnigraffle-professional5
+brew cask install --appdir="/Applications" omnigraffle-professional5
 
 # Remove outdated versions from the cellar.
 brew cleanup
