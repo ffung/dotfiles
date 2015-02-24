@@ -34,10 +34,13 @@ brew install homebrew/dupes/grep
 
 # Install other useful binaries.
 brew install git
-brew install python3
 brew install ssh-copy-id
 brew install the_silver_searcher
 brew install tmux
+
+# Install python environments via pyenv
+brew install pyenv
+brew install pyenv-virtualenv
 
 # Install some devops tooling.
 brew install boot2docker
