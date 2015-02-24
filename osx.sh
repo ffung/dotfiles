@@ -40,6 +40,7 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
+# Increase default tracking speed
 defaults write -g com.apple.trackpad.scaling 2.5
 
 # Trackpad: enable tap to click for this user and for the login screen
