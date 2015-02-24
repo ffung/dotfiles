@@ -31,7 +31,6 @@ brew install bash-completion
 brew install vim --override-system-vi
 brew install openssl
 brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
 
 # Install other useful binaries.
 brew install git
