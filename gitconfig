@@ -90,13 +90,13 @@
 	ours = "!f() { git co --ours $@ && git add $@; }; f"
 	theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 [core]
-	excludesfile = /Users/fai/.gitignore
+	excludesfile = /Users/fai/.gitignore_global
 	editor = /usr/bin/vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.4/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
 	default = simple
