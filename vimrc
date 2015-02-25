@@ -3,6 +3,7 @@ set nocompatible
 
 " ======= General Config =======
 set number "Show linenumbers
+set relativenumber "Show relative linenumbers
 set guifont=Menlo\ Regular:h20
 set gcr=a:blinkon0 "Disable cursor blink
 set visualbell "No sounds
