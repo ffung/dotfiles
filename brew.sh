@@ -42,6 +42,11 @@ brew install tmux
 brew install pyenv
 brew install pyenv-virtualenv
 
+# Install ruby environments via rbenv
+brew install rbenv 
+brew install ruby-build
+brew install rbenv-gem-rehash
+
 # Install some devops tooling.
 brew install boot2docker
 #brew install docker
