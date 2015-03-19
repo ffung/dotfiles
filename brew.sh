@@ -70,15 +70,18 @@ brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install java
+brew cask install xquartz
 brew cask install tunnelblick
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" clipmenu
 brew cask install --appdir="/Applications" eclipse-java
+brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" flash-player
 brew cask install --appdir="/Applications" iterm2
 brew cask install --appdir="/Applications" omnifocus
 brew cask install --appdir="/Applications" p4v
+brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" sourcetree
 brew cask install --appdir="/Applications" virtualbox
