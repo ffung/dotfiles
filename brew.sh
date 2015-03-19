@@ -33,10 +33,14 @@ brew install openssl
 brew install homebrew/dupes/grep
 
 # Install other useful binaries.
+brew install ctags
 brew install git
 brew install ssh-copy-id
 brew install the_silver_searcher
 brew install tmux
+
+# Install some build tooling
+brew install gradle
 
 # Install python environments via pyenv
 brew install pyenv
@@ -65,9 +69,11 @@ brew install macvim-split-browser
 brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install java
 brew cask install tunnelblick
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" clipmenu
+brew cask install --appdir="/Applications" eclipse-java
 brew cask install --appdir="/Applications" firefox
 brew cask install --appdir="/Applications" flash-player
 brew cask install --appdir="/Applications" iterm2
