@@ -65,6 +65,7 @@ brew install macvim-split-browser
 brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew cask install vagrant
+brew cask install tunnelblick
 brew cask install --appdir="/Applications" caffeine
 brew cask install --appdir="/Applications" clipmenu
 brew cask install --appdir="/Applications" firefox
@@ -74,7 +75,6 @@ brew cask install --appdir="/Applications" omnifocus
 brew cask install --appdir="/Applications" p4v
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" sourcetree
-brew cask install --appdir="/Applications" tunnelblick
 brew cask install --appdir="/Applications" virtualbox
 brew cask install --appdir="/Applications" vlc
 brew cask install --appdir="/Applications" vmware-fusion
