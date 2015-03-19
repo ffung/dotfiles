@@ -36,6 +36,10 @@ colorscheme badwolf
 
 let mapleader = ","
 
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
 " Edit / source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
