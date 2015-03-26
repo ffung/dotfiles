@@ -70,6 +70,7 @@ brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install java
+brew cask install haskell-platform
 brew cask install xquartz
 brew cask install tunnelblick
 brew cask install --appdir="/Applications" caffeine
