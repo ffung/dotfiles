@@ -26,6 +26,7 @@ brew install gnu-sed --with-default-names
 # running `chsh`.
 brew install bash
 brew install bash-completion
+brew install bats
 
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
@@ -35,9 +36,12 @@ brew install homebrew/dupes/grep
 # Install other useful binaries.
 brew install ctags
 brew install git
+brew install git-lfs
 brew install ssh-copy-id
+brew install jq
 brew install the_silver_searcher
 brew install tmux
+brew install macvim && brew linkapps macvim
 
 # Install some build tooling
 brew install gradle
@@ -47,23 +51,23 @@ brew install pyenv
 brew install pyenv-virtualenv
 
 # Install ruby environments via rbenv
-brew install rbenv 
+brew install rbenv
 brew install ruby-build
 brew install rbenv-gem-rehash
 
 # Install some devops tooling.
-brew install boot2docker
-#brew install docker
+brew install docker
+brew install docker-compose
+brew install docker-machine
+brew install docker-swarm
+brew install fleetctl
+
 brew tap homebrew/binary
 brew install packer
 
 # Install rcm, a management suite for dotfiles.
 brew tap thoughtbot/formulae
 brew install rcm
-
-# Install MacVim with split browser support.
-brew tap joelcogen/macvimsplitbrowser
-brew install macvim-split-browser
 
 # Install casks
 brew install caskroom/cask/brew-cask
@@ -78,20 +82,24 @@ brew cask install --appdir="/Applications" clipmenu
 brew cask install --appdir="/Applications" eclipse-java
 brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" flash-player
+#brew cask install --appdir="/Applications" flash-player
 brew cask install --appdir="/Applications" iterm2
+brew cask install --appdir="/Applications" libreoffice
 brew cask install --appdir="/Applications" omnifocus
 brew cask install --appdir="/Applications" p4v
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" sourcetree
 brew cask install --appdir="/Applications" virtualbox
+brew cask install --appdir="/Applications" vitamin-r
 brew cask install --appdir="/Applications" vlc
 brew cask install --appdir="/Applications" vmware-fusion
+brew cask install qlmarkdown # install quick look for markdown files
 
 brew tap caskroom/versions
 brew cask install --appdir="/Applications" omnigraffle-professional5
 
+brew tap homebrew/versions
+
 # Remove outdated versions from the cellar.
 brew cleanup
-

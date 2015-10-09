@@ -4,10 +4,19 @@ set nocompatible
 " ======= General Config =======
 set number "Show linenumbers
 set relativenumber "Show relative linenumbers
-set guifont=Menlo\ Regular:h20
+set guifont=Hasklig:h14
+let g:airline_powerline_fonts = 1
 set gcr=a:blinkon0 "Disable cursor blink
 set visualbell "No sounds
 set nowritebackup
+
+" netrw
+let g:netrw_altv=1
+let g:netrw_winsize=25
+let g:netrw_banner=0
+
+" Automatically delete trailing whitespace
+let g:DeleteTrailingWhitespace_Action = 'delete'
 
 set dir=/var/tmp//,/tmp//,.
 set undodir=/tmp/.vim/undodir
@@ -15,20 +24,53 @@ set undofile
 set undolevels=1000 "maximum number of changes that can be undone
 set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
-filetype off 
+" Enable mouse
+set mouse=a
+set ttymouse=xterm2
+
+" Exit pastemode on insertleave
+au InsertLeave * set nopaste
+
+" Default yank and paste go to Mac's clipboard
+if version >= 703 && has("macunix")
+    set clipboard=unnamed
+endif
+
+
+" Correct syntax highlighting for Markdown
+augroup markdown
+  au!
+  au BufRead,BufNewFile *.md set filetype=markdown
+augroup END
+
+" Correct syntax highlighting for Vagrantfile
+augroup vagrant
+  au!
+  au BufRead,BufNewFile Vagrantfile set filetype=ruby
+augroup END
+
+filetype off
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'sjl/badwolf'
+Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-vinegar'
+Plugin 'bling/vim-airline'
+Plugin 'scrooloose/syntastic'
 Plugin 'elzr/vim-json'
-call vundle#end()  
-filetype plugin indent on 
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'vim-scripts/ShowTrailingWhitespace'
+Plugin 'vim-scripts/DeleteTrailingWhitespace'
+call vundle#end()
+filetype plugin indent on
 
 set background=dark
 syntax on
@@ -43,6 +85,7 @@ set softtabstop=4
 " Edit / source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <silent> <Leader>e :Explore<cr>
 
 inoremap jj <esc>
 inoremap <esc> <nop>

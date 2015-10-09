@@ -215,7 +215,7 @@ defaults write com.apple.dock autohide -bool true
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-# Swipe down with threee fingers for App Expose
+# Swipe down with four fingers for App Expose
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 
 # Hot corners
@@ -291,7 +291,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
 defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
 
-# Display emails in threaded mode, sorted by date 
+# Display emails in threaded mode, sorted by date
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortedDescending" -string "yes"
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -string "received-date"
@@ -337,3 +337,8 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # Customize shell
 ###############################################################################
 curl -L http://install.ohmyz.sh | sh
+
+###############################################################################
+# Disable signed kernel extensions (for some VPN solutions like Juniper)
+###############################################################################
+# sudo nvram boot-args="kext-dev-mode=1"
