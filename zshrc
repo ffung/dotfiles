@@ -67,3 +67,12 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[magenta]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[magenta]%})%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+# Ruby development
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Python development
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
