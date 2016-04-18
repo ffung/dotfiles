@@ -66,10 +66,6 @@ brew install kubernetes-cli
 brew tap homebrew/binary
 brew install packer
 
-# Install rcm, a management suite for dotfiles.
-brew tap thoughtbot/formulae
-brew install rcm
-
 # Install casks
 brew cask install virtualbox
 brew cask install vagrant
