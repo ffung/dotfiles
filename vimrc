@@ -66,9 +66,10 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
 Plugin 'elzr/vim-json'
-Plugin 'chase/vim-ansible-yaml'
+Plugin 'pearofducks/ansible-vim'
 Plugin 'vim-scripts/ShowTrailingWhitespace'
 Plugin 'vim-scripts/DeleteTrailingWhitespace'
+Plugin 'hashivim/vim-hashicorp-tools'
 call vundle#end()
 filetype plugin indent on
 

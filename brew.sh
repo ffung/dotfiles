@@ -61,6 +61,7 @@ brew install docker-compose
 brew install docker-machine
 brew install docker-swarm
 brew install fleetctl
+brew install kubernetes-cli
 
 brew tap homebrew/binary
 brew install packer
@@ -70,7 +71,6 @@ brew tap thoughtbot/formulae
 brew install rcm
 
 # Install casks
-brew install caskroom/cask/brew-cask
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install java
@@ -82,7 +82,7 @@ brew cask install --appdir="/Applications" clipmenu
 brew cask install --appdir="/Applications" eclipse-java
 brew cask install --appdir="/Applications" evernote
 brew cask install --appdir="/Applications" firefox
-#brew cask install --appdir="/Applications" flash-player
+brew cask install --appdir="/Applications" flux
 brew cask install --appdir="/Applications" iterm2
 brew cask install --appdir="/Applications" libreoffice
 brew cask install --appdir="/Applications" omnifocus
