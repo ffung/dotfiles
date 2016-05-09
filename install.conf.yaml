@@ -10,6 +10,7 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
+    ~/.ghc/ghci.conf: ghci.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
