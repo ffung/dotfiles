@@ -11,6 +11,9 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.ghc/ghci.conf: ghci.conf
+    ~/.config/nvim/init.vim: vimrc
+    ~/.config/nvim/init.vim: vimrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - ln -s ~/.vim ~/.config/nvim

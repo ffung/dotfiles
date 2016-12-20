@@ -29,7 +29,9 @@ brew install bash-completion
 brew install bats
 
 # Install more recent versions of some OS X tools.
-brew install vim --override-system-vi
+brew tap neovim/neovim
+brew install neovim
+#brew install vim --with-override-system-vi
 brew install openssl
 brew install homebrew/dupes/grep
 

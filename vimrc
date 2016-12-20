@@ -26,14 +26,16 @@ set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 
 " Enable mouse
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+   set ttymouse=xterm2
+endif
 
 " Exit pastemode on insertleave
 au InsertLeave * set nopaste
 
 " Default yank and paste go to Mac's clipboard
 if version >= 703 && has("macunix")
-    set clipboard=unnamed
+   set clipboard=unnamed
 endif
 
 
