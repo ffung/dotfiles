@@ -12,7 +12,6 @@ alias dm=docker-machine
 alias v=vagrant
 alias tf=terraform
 
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -21,6 +20,7 @@ plugins=(gitfast osx vagrant docker)
 source $ZSH/oh-my-zsh.sh
 
 path=("$HOME/bin"
+       "$HOME/.local/bin"
        $path
       /Applications/Xcode.app/Contents/Developer/usr/bin
 )
@@ -52,3 +52,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PIP_REQUIRE_VIRTUALENV=true
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+export GOPATH=~/work/go
+alias gb=$GOPATH/bin/gb
