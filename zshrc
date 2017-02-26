@@ -55,3 +55,4 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 
 export GOPATH=~/work/go
 alias gb=$GOPATH/bin/gb
+alias vi=nvim
