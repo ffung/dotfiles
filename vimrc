@@ -97,8 +97,6 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <silent> <Leader>e :Explore<cr>
 
-inoremap jj <esc>
-inoremap <esc> <nop>
 cnoremap w!! w !sudo tee > /dev/null %
 
 " Haskell
