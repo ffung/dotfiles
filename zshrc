@@ -7,11 +7,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
 
-# Aliases
-alias dm=docker-machine
-alias v=vagrant
-alias tf=terraform
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -23,12 +18,35 @@ path=("$HOME/bin"
       $path
 )
 
+export LS_COLORS="di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32";
+
+# Ruby development
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Python development
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.agignore -g ""'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+
+_fzf_compgen_path() {
+  ag --path-to-ignore ~/.agignore -g "" "$1"
+}
+
+_fzf_compgen_dir() {
+  ag --path-to-ignore ~/.agignore -g "" "$1"
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 
 bindkey \^U backward-kill-line
-
-FPATH=~/.zsh/functions:$FPATH
 
 function collapse_pwd {
   echo $(pwd | sed -e "s,^$HOME,~,")
@@ -45,15 +63,10 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[magenta]%})%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-# Ruby development
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Python development
-# pip should only run if there is a virtualenv currently activated
-export PIP_REQUIRE_VIRTUALENV=true
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
 export GOPATH=~/work/go
+# Aliases
+alias dm=docker-machine
+alias v=vagrant
+alias tf=terraform
 alias gb=$GOPATH/bin/gb
 alias vi=nvim
