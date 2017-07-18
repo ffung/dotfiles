@@ -3,8 +3,8 @@ set nocompatible
 
 " ======= General Config =======
 set number "Show linenumbers
-set relativenumber "Show relative linenumbers
 set guifont=Hasklig:h14
+let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
 set gcr=a:blinkon0 "Disable cursor blink
 set visualbell "No sounds
@@ -51,46 +51,54 @@ augroup vagrant
   au BufRead,BufNewFile Vagrantfile set filetype=ruby
 augroup END
 
-filetype off
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-Plugin 'sjl/badwolf'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-vinegar'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/syntastic'
-Plugin 'elzr/vim-json'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'vim-scripts/ShowTrailingWhitespace'
-Plugin 'vim-scripts/DeleteTrailingWhitespace'
-Plugin 'hashivim/vim-hashicorp-tools'
-Plugin 'fatih/vim-go'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'ervandew/supertab'
-" Haskell
-Plugin 'eagletmt/ghcmod-vim'
-Plugin 'eagletmt/neco-ghc'
-Plugin 'Shougo/vimproc.vim'
-call vundle#end()
-filetype plugin indent on
+call plug#begin('~/.vim/plugged')
+Plug 'bling/vim-airline'
+Plug 'elzr/vim-json'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rakr/vim-one'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
+Plug 'vim-scripts/ShowTrailingWhitespace'
+Plug 'vim-scripts/DeleteTrailingWhitespace'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+
+Plug 'hashivim/vim-hashicorp-tools'
+Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+Plug 'leafgarland/typescript-vim', {'for': 'typescript' }
+call plug#end()
 
 set background=dark
 syntax on
-colorscheme badwolf
+colorscheme one
 
 let mapleader = ","
 
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" FZF
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
 
 " Edit / source .vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -99,6 +107,16 @@ nnoremap <silent> <Leader>e :Explore<cr>
 
 cnoremap w!! w !sudo tee > /dev/null %
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
 " Haskell
 map <silent> tw :GhcModTypeInsert<CR>
 map <silent> ts :GhcModSplitFunCase<CR>
@@ -106,6 +124,11 @@ map <silent> tq :GhcModType<CR>
 map <silent> te :GhcModTypeClear<CR>
 
 let g:SuperTabDefaultCompletionType = '<c-x><c-o>'
+let g:haskell_tabular = 1
+
+vmap a= :Tabularize /=<CR>
+vmap a; :Tabularize /::<CR>
+vmap a- :Tabularize /-><CR>
 
 if has("gui_running")
   imap <c-space> <c-r>=SuperTabAlternateCompletion("\<lt>c-x>\<lt>c-o>")<cr>
@@ -115,5 +138,9 @@ else " no gui
   endif
 endif
 
-let g:haskellmode_completion_ghc = 1
+let g:necoghc_enable_detailed_browse = 1
+let g:deoplete#enable_at_startup = 1
+let g:python2_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
