@@ -42,6 +42,7 @@ brew install git-lfs
 brew install ssh-copy-id
 brew install jq
 brew install the_silver_searcher
+brew install fzf
 brew install tmux
 
 # Install some build tooling
@@ -55,6 +56,13 @@ brew install pyenv-virtualenv
 brew install rbenv
 brew install ruby-build
 brew install rbenv-gem-rehash
+
+# Install haskell
+brew install haskell-stack
+brew install python
+brew install python3
+PIP_REQUIRE_VIRTUALENV=false pip2 install neovim --upgrade
+PIP_REQUIRE_VIRTUALENV=false pip3 install neovim --upgrade
 
 # Install some devops tooling.
 brew install docker
@@ -70,7 +78,6 @@ brew install packer
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install java
-brew cask install haskell-platform
 brew cask install xquartz
 brew cask install tunnelblick
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
