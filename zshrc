@@ -41,10 +41,9 @@ _fzf_compgen_dir() {
   ag --path-to-ignore ~/.agignore -g "" "$1"
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 source $ZSH/oh-my-zsh.sh
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 bindkey \^U backward-kill-line
 
