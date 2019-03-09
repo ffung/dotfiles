@@ -60,7 +60,6 @@ brew install rbenv-gem-rehash
 # Install haskell
 brew install haskell-stack
 brew install python
-brew install python3
 PIP_REQUIRE_VIRTUALENV=false pip2 install neovim --upgrade
 PIP_REQUIRE_VIRTUALENV=false pip3 install neovim --upgrade
 

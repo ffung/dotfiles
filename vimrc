@@ -1,4 +1,4 @@
-" VIM
+
 set nocompatible
 
 " ======= General Config =======
@@ -53,13 +53,15 @@ augroup END
 
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
+Plug 'Chiel92/vim-autoformat'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
-Plug 'scrooloose/syntastic'
+Plug 'mileszs/ack.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rakr/vim-one'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -70,6 +72,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-scripts/ShowTrailingWhitespace'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'w0rp/ale'
 
 Plug 'hashivim/vim-hashicorp-tools'
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
@@ -139,9 +142,18 @@ else " no gui
 endif
 
 let g:necoghc_enable_detailed_browse = 1
-let g:deoplete#enable_at_startup = 1
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+if has("nvim")
+  let g:deoplete#enable_at_startup = 1
+endif
+let g:python_host_prog = '/Users/fai/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/fai/.pyenv/versions/neovim3/bin/python'
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 call one#highlight('Pmenu', 'cccccc', '', 'none')
+
+" Prefer ag above ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>

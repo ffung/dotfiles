@@ -10,7 +10,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gnu-utils gitfast osx vagrant docker)
+plugins=(gnu-utils gitfast osx vagrant docker kubectl)
 
 path=("$HOME/bin"
       "$HOME/.local/bin"
@@ -69,3 +69,4 @@ alias v=vagrant
 alias tf=terraform
 alias gb=$GOPATH/bin/gb
 alias vi=nvim
+alias nano=vi
