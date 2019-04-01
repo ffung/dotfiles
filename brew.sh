@@ -65,6 +65,7 @@ brew install kubernetes-cli
 
 # Install casks
 brew cask install iterm2
+brew cask install gpg-suite-no-mail
 brew cask install firefox
 brew cask install slack
 brew cask install dropbox
