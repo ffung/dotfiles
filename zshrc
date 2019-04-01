@@ -15,6 +15,9 @@ plugins=(gnu-utils gitfast osx vagrant docker kubectl)
 path=("$HOME/bin"
       "$HOME/.local/bin"
       /Applications/Xcode.app/Contents/Developer/usr/bin
+      /usr/local/opt/gnu-sed/libexec/gnubin
+      /usr/local/opt/grep/libexec/gnubin
+      /usr/local/opt/openssl/bin/gnubin
       $path
 )
 

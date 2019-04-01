@@ -19,49 +19,42 @@ brew upgrade
 # Install GNU core utilities (those that come with OS X are outdated).
 # Don't forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-# Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
+brew install gnu-sed
+
+brew install zsh
 # Install Bash 4.
 # Note: don't forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
-brew install bash
-brew install bash-completion
-brew install bats
+# brew install bash
+# brew install bash-completion
+# brew install bats
 
 # Install more recent versions of some OS X tools.
-brew tap neovim/neovim
 brew install neovim
-#brew install vim --with-override-system-vi
 brew install openssl
-brew install homebrew/dupes/grep
+brew install grep
 
 # Install other useful binaries.
-brew install ctags
 brew install git
-brew install git-lfs
-brew install ssh-copy-id
-brew install jq
-brew install the_silver_searcher
+brew install ctags
 brew install fzf
+brew install jq
 brew install tmux
 
 # Install some build tooling
-brew install gradle
+# brew install gradle
 
 # Install python environments via pyenv
 brew install pyenv
 brew install pyenv-virtualenv
 
 # Install ruby environments via rbenv
-brew install rbenv
-brew install ruby-build
-brew install rbenv-gem-rehash
+# brew install rbenv
+# brew install ruby-build
+# brew install rbenv-gem-rehash
 
 # Install haskell
 brew install haskell-stack
-brew install python
-PIP_REQUIRE_VIRTUALENV=false pip2 install neovim --upgrade
-PIP_REQUIRE_VIRTUALENV=false pip3 install neovim --upgrade
 
 # Install some devops tooling.
 brew install docker
@@ -70,33 +63,16 @@ brew install docker-machine
 brew install docker-swarm
 brew install kubernetes-cli
 
-brew tap homebrew/binary
-brew install packer
-
 # Install casks
+brew cask install iterm2
+brew cask install firefox
+brew cask install slack
+brew cask install dropbox
+brew cask install clipy
+brew cask install intelliscape-caffeine
+
 brew cask install virtualbox
 brew cask install vagrant
-brew cask install java
-brew cask install xquartz
-brew cask install tunnelblick
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv
-brew cask install --appdir="/Applications" macvim
-brew cask install --appdir="/Applications" caffeine
-brew cask install --appdir="/Applications" clipmenu
-brew cask install --appdir="/Applications" firefox
-brew cask install --appdir="/Applications" flux
-brew cask install --appdir="/Applications" iterm2
-brew cask install --appdir="/Applications" libreoffice
-brew cask install --appdir="/Applications" omnifocus
-brew cask install --appdir="/Applications" slack
-brew cask install --appdir="/Applications" sourcetree
-brew cask install --appdir="/Applications" virtualbox
-brew cask install --appdir="/Applications" vitamin-r
-brew cask install --appdir="/Applications" vmware-fusion
 
-brew tap caskroom/versions
-brew cask install --appdir="/Applications" omnigraffle-professional5
-
-brew tap homebrew/versions
 # Remove outdated versions from the cellar.
 brew cleanup
