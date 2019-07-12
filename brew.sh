@@ -37,6 +37,7 @@ brew install grep
 # Install other useful binaries.
 brew install git
 brew install ctags
+brew install ag
 brew install fzf
 brew install jq
 brew install tmux
@@ -71,6 +72,7 @@ brew cask install slack
 brew cask install dropbox
 brew cask install clipy
 brew cask install intelliscape-caffeine
+brew cask install spectacle
 
 brew cask install virtualbox
 brew cask install vagrant

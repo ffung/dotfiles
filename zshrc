@@ -65,6 +65,7 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[magenta]%})%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
+export LC_ALL=en_US.UTF-8
 export GOPATH=~/work/go
 # Aliases
 alias dm=docker-machine

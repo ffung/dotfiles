@@ -3,12 +3,18 @@ set nocompatible
 
 " ======= General Config =======
 set number "Show linenumbers
-set guifont=Hasklig:h14
+if exists('&guifont')
+   set guifont=Hasklig:h14
+endif
+
 let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
 set gcr=a:blinkon0 "Disable cursor blink
 set visualbell "No sounds
 set nowritebackup
+
+" Disable background from ColorScheme's, use terminal's background
+autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 
 " netrw
 let g:netrw_altv=1
@@ -38,26 +44,12 @@ if version >= 703 && has("macunix")
    set clipboard=unnamed
 endif
 
-
-" Correct syntax highlighting for Markdown
-augroup markdown
-  au!
-  au BufRead,BufNewFile *.md set filetype=markdown
-augroup END
-
-" Correct syntax highlighting for Vagrantfile
-augroup vagrant
-  au!
-  au BufRead,BufNewFile Vagrantfile set filetype=ruby
-augroup END
-
 call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline'
 Plug 'Chiel92/vim-autoformat'
 Plug 'elzr/vim-json'
 Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
-Plug 'mileszs/ack.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rakr/vim-one'
@@ -75,10 +67,16 @@ Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 
 Plug 'hashivim/vim-hashicorp-tools'
+
 Plug 'pearofducks/ansible-vim', { 'for': 'ansible' }
+
 Plug 'fatih/vim-go', { 'for': 'go' }
+
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell' }
 Plug 'eagletmt/ghcmod-vim', { 'for': 'haskell' }
 Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+
 Plug 'leafgarland/typescript-vim', {'for': 'typescript' }
 call plug#end()
 
@@ -109,11 +107,6 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <silent> <Leader>e :Explore<cr>
 
 cnoremap w!! w !sudo tee > /dev/null %
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
