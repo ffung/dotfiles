@@ -1,5 +1,5 @@
-# use vim as the visual editor
-export VISUAL=vim
+# use vi as the visual editor
+export VISUAL=vi
 export EDITOR=$VISUAL
 
 # Local config
