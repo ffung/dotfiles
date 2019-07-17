@@ -36,6 +36,7 @@ brew install grep
 
 # Install other useful binaries.
 brew install git
+brew install bat
 brew install ctags
 brew install ag
 brew install fzf
