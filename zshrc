@@ -34,14 +34,15 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.agignore -g ""'
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
-export FZF_CTRL_T_OPTS='--preview "[[ $(file --mime {}) =~ binary ]] &&
+export FZF_PREVIEW_OPTS="--preview '[[ \$(file --mime {}) =~ binary ]] &&
                  echo {} is a binary file ||
                  (bat --style=numbers --color=always {} ||
                   highlight -O ansi -l {} ||
                   coderay {} ||
                   rougify {} ||
-                  cat {}) 2> /dev/null | head -500"'
-export FZF_COMPLETION_OPTS=$FZF_CTRL_T_OPTS
+                  cat {}) 2> /dev/null | head -500'"
+export FZF_CTRL_T_OPTS=$FZF_PREVIEW_OPTS
+export FZF_COMPLETION_OPTS=$FZF_PREVIEW_OPTS
 
 _fzf_compgen_path() {
   ag --path-to-ignore ~/.agignore -g "" "$1"
@@ -77,3 +78,4 @@ alias tf=terraform
 alias gb=$GOPATH/bin/gb
 alias vi=nvim
 alias nano=vi
+alias f="fzf $FZF_PREVIEW_OPTS"
