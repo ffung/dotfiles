@@ -94,10 +94,11 @@
     ours = "!f() { git co --ours $@ && git add $@; }; f"
     theirs = "!f() { git co --theirs $@ && git add $@; }; f"
 [core]
-    excludesfile = /Users/fai/.gitignore_global
+    excludesfile = /Users/fai/.gitignore
     editor = vi
+    pager = less -XF
 [push]
-    default = simple
+    default = current
 [credential]
     helper = osxkeychain
 [filter "lfs"]
@@ -108,3 +109,8 @@
 [include]
     path = ~/.gitconfig.local
 
+[includeIf "gitdir:~/work/ns/**"]
+    path = ~/.gitconfig.ns
+[pull]
+	ff = only
+    rebase = true
