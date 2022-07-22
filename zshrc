@@ -93,11 +93,11 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 export LC_ALL=en_US.UTF-8
 # Aliases
-alias dm=docker-machine
 alias v=vagrant
 alias tf=terraform
 alias vi=nvim
 alias vim=nvim
 alias nano=vi
 alias f="fzf $FZF_PREVIEW_OPTS"
+alias docker=podman
 
